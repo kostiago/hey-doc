@@ -22,11 +22,21 @@ export default class DatabaseService {
   }
 
   //PATIENT
-  getPatientByPhone(phone: string, includeAppointment: boolean = false) {
+  getPatientByPhone(
+    phone: string,
+    includeAppointment: boolean = false,
+    includeDoctor: boolean = false
+  ) {
     return this.connection.patient.findUnique({
       where: { phone },
       include: {
-        appointement: includeAppointment,
+        appointement: !includeAppointment
+          ? false
+          : {
+              include: {
+                doctor: includeDoctor,
+              },
+            },
       },
     });
   }
