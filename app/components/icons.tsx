@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-type IconName = "edit" | "eye" | "link" | "location";
+export type IconName = "edit" | "eye" | "link" | "location";
 
 type IconProps = Readonly<{
   name: IconName;
