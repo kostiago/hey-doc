@@ -23,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <PreloadResources />
-      <body className={`${poppins.variable} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} antialiased bg-slate-200`}>
+        <div className="w-full m-auto max-w-[382px] mt-10 bg-white py-10 px-7 rounded-3xl shadow-md">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
